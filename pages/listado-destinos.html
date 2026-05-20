@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Listado de Destinos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/listado-destinos.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <span class="logo__icon">✈</span>
+        <span class="logo__text">SemiDAW Travel Agency</span>
+      </div>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="../index.html" class="nav__link">Inicio</a></li>
+          <li>
+            <a href="../pages/usuario-listado.html" class="nav__link"
+              >Usuarios</a
+            >
+          </li>
+          <li>
+            <a
+              href="../pages/listado-destinos.html"
+              class="nav__link nav__link--active"
+              >Destinos</a
+            >
+          </li>
+          <li>
+            <a href="../pages/listado-guias.html" class="nav__link">Guias</a>
+          </li>
+          <li>
+            <a href="../pages/listado-reservas.html" class="nav__link"
+              >Reservas</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="list-section" aria-labelledby="list-title">
+        <h2 id="list-title" class="destinos">Destinos disponibles</h2>
+        <a id="btn-destino" class="destinos" href="../pages/crear-destino.html"
+          >Crear Destino</a
+        >
+
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Ciudad</th>
+              <th>País</th>
+              <th>Precio (€)</th>
+              <th>Requiere pasaporte</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody id="tablaDestinos">
+            <!-- Rellenado dinámicamente -->
+          </tbody>
+        </table>
+
+        <p id="mensaje" class="mensaje"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Agencia de Viajes SemiDAW · Páginas de Prueba</p>
+    </footer>
+
+    <script src="../js/destinos.js"></script>
+  </body>
+</html>

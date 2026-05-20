@@ -1,0 +1,232 @@
+/* Configuración de estilo de index */
+/* Reset básico */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    /* background: #f5f7fa;*/
+    background-image: url("../img/benidorm-levante.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #222;
+    line-height: 1.5;
+}
+
+/* Layout general */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #005f99;
+    color: #fff;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo__icon {
+    font-size: 1.5rem;
+}
+
+.logo__text {
+    font-weight: 600;
+}
+
+/* Navegación */
+.nav__list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav__link {
+    color: #e0f4ff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav__link:hover {
+    background: #e0f4ff;
+    color: #005f99;
+}
+
+.nav__link--active {
+    background: #e0f4ff;
+    color: #005f99;
+    font-weight: 600;
+}
+
+/* Hero (Flex) */
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 3rem 1.5rem;
+    /* background: linear-gradient(135deg, #0096c7, #48cae4);*/
+    background: rgba(0,0,0,0);
+    color: #fff;
+    text-align: center;
+}
+
+.hero__content {
+    max-width: 700px;
+}
+
+.hero h1 {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+}
+
+.hero p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.hero__actions {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 0.7rem 1.4rem;
+    border-radius: 999px;
+    border: none;
+    text-decoration: none;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: transform 0.1s ease, box-shadow 0.1s ease, background 0.2s;
+}
+
+.btn--primary {
+    background: #023e8a;
+    color: #fff;
+}
+
+.btn--secondary {
+    background: #caf0f8;
+    color: #023e8a;
+}
+
+.btn--small {
+    padding: 0.5rem 1rem;
+    font-size: 0.85rem;
+}
+
+.btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Sección de accesos rápidos (Grid) */
+main {
+    padding: 2rem 1.5rem 3rem;
+    margin-top: 2rem;
+}
+
+.quick-links {
+    max-width: 1100px;
+    margin: 0 auto;
+    margin-top: 10rem;
+}
+
+.quick-links h2 {
+    margin-bottom: 1rem;
+    font-size: 1.4rem;
+}
+
+.quick-links__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+}
+
+.card {
+    background: #aee8f8;
+    border-radius: 0.75rem;
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+}
+
+.card h3 {
+    font-size: 1.1rem;
+}
+
+.card p {
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* Sección informativa */
+.info {
+    max-width: 900px;
+    margin: 2.5rem auto 0;
+}
+
+.info h2 {
+    margin-bottom: 0.8rem;
+    font-size: 2rem;
+    text-align: center;
+    animation: tresColores 3s infinite;
+}
+
+@keyframes tresColores {
+  0% {
+    color: blue;
+  }
+  50% {
+    color: blueviolet;
+  }
+  100% {
+    color: blue;
+  }
+}
+
+.info__article {
+    background: #ffffff;
+    border-radius: 0.75rem;
+    padding: 1.2rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-size: 0.95rem;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    background: #003049;
+    color: #e0f4ff;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
+
+/* Responsive pequeño */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        gap: 0.8rem;
+    }
+
+    .hero h1 {
+        font-size: 1.8rem;
+    }
+}
