@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Alta de Usuario</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- archivo de estilos -->
+    <link rel="stylesheet" href="../css/crear-usuario.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <span class="logo__icon">✈</span>
+        <span class="logo__text">SemiDAW Travel Agency</span>
+      </div>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="../index.html" class="nav__link">Inicio</a></li>
+          <li>
+            <a
+              href="../pages/usuario-listado.html"
+              class="nav__link nav__link--active"
+              >Usuarios</a
+            >
+          </li>
+          <li>
+            <a href="../pages/listado-destinos.html" class="nav__link"
+              >Destinos</a
+            >
+          </li>
+          <li>
+            <a href="../pages/listado-guias.html" class="nav__link">Guias</a>
+          </li>
+          <li>
+            <a href="../pages/listado-reservas.html" class="nav__link"
+              >Reservas</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="form-section" aria-labelledby="form-title">
+        <h2 id="form-title">Formulario de creación de usuario</h2>
+
+        <form id="formUsuario" novalidate>
+          <fieldset>
+            <legend>Datos personales</legend>
+
+            <label for="nombre">Nombre</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              required
+              minlength="2"
+              maxlength="40"
+              pattern="[A-Za-zÝÉÝÓÚáéíóúñÑ ]+"
+            />
+
+            <label for="apellidos">Apellidos</label>
+            <input
+              type="text"
+              id="apellidos"
+              name="apellidos"
+              required
+              minlength="2"
+              maxlength="60"
+              pattern="[A-Za-zÝÉÝÓÚáéíóúñÑ ]+"
+            />
+
+            <label for="email">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              maxlength="80"
+            />
+
+            <label for="telefono">Teléfono</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              required
+              pattern="[0-9]{9}"
+              maxlength="9"
+            />
+
+            <label for="fecha_nacimiento">Fecha de nacimiento</label>
+            <input
+              type="date"
+              id="fecha_nacimiento"
+              name="fecha_nacimiento"
+              required
+            />
+          </fieldset>
+
+          <fieldset>
+            <legend>Pasaporte (opcional)</legend>
+
+            <label class="no-flex">
+              <input type="checkbox" id="crearPasaporte" />
+              Crear pasaporte ahora
+            </label>
+
+            <div id="pasaporteFields">
+              <label for="numero">Número de pasaporte</label>
+              <input
+                type="text"
+                id="numero"
+                name="numero"
+                minlength="6"
+                maxlength="20"
+              />
+
+              <label for="pais_expedicion">País de expedición</label>
+              <input
+                type="text"
+                id="pais_expedicion"
+                name="pais_expedicion"
+                minlength="3"
+                maxlength="40"
+              />
+
+              <label for="fecha_caducidad">Fecha de caducidad</label>
+              <input type="date" id="fecha_caducidad" name="fecha_caducidad" />
+            </div>
+          </fieldset>
+
+          <button type="submit" class="btn" id="form" name="form">
+            Crear usuario
+          </button>
+        </form>
+
+        <p id="mensaje" class="mensaje"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Agencia de Viajes SemiDAW · Páginas de Prueba</p>
+    </footer>
+
+    <script src="../js/usuarios.js"></script>
+  </body>
+</html>

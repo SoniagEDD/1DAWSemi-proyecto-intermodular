@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8">
+		<title>Spring REST API Tester</title>
+		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="styles.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/10.4.1/jsoneditor.css">
+	</head>
+	<body>
+		<div class="container-fluid mt-4">
+			<h1 class="mb-4 text-center">Spring REST API Tester</h1>
+			<div class="row">
+				<!-- IZQUIERDA: RESULTADO -->
+				<div class="col-md-6">
+					<div id="resultBox" class="card border-dark mb-4 sticky-top" style="top:20px;">
+						<div class="card-header bg-dark text-white d-flex align-items-center">
+							<span class="me-2 flex-shrink-0">Resultado</span>
+							<div class="input-group input-group-sm flex-grow-1 mx-2">
+								<span class="input-group-text bg-secondary">http://</span>
+								<input type="text" id="dominio" class="form-control" value="localhost">
+								<span class="input-group-text bg-secondary">:</span>
+								<input type="text" id="puerto" class="form-control w-25" value="8080">
+								<span class="input-group-text bg-secondary">Status:</span>
+								<span class="input-group-text text-center" id="status"></span>
+							</div>
+							<button class="btn btn-sm btn-light" onclick="clearResult()">Limpiar</button>
+						</div>
+						<div id="response" class="card-body"></div>
+					</div>
+				</div>
+				<!-- DERECHA: CONTENIDO -->
+				<div class="col-md-6">
+					<!-- CRUD -->
+					<div class="card text-white section mb-4">
+						<div class="card-header bg-secondary d-flex align-items-center">
+							<span class="me-2">CRUD</span>
+							<select id="crudEntity" class="form-select w-auto ms-2">
+								<option>usuario</option>
+								<option>guia</option>
+								<option>destino</option>
+								<option>pasaporte</option>
+								<option>reserva</option>
+							</select>
+						</div>
+						<div class="card-body">
+							<div class="input-group mb-2">
+								<span class="input-group-text w-25">Find All</span>
+								<input type="text" id="pathGetAll" class="form-control">
+								<span class="input-group-text">GET</span>
+								<button class="btn btn-primary" onclick="getAll()">Send</button>
+							</div>
+							<div class="input-group mb-2">
+								<span class="input-group-text w-25">Find By Id</span>
+								<input type="text" id="pathGetById" class="form-control">
+								<input type="text" id="getId" class="form-control" placeholder="ID">
+								<span class="input-group-text">GET</span>
+								<button class="btn btn-primary" onclick="getById(getId.value)">Send</button>
+							</div>
+							<div class="input-group mb-2">
+								<span class="input-group-text w-25">Delete</span>
+								<input type="text" id="pathDelete" class="form-control">
+								<input type="text" id="deleteId" class="form-control" placeholder="ID">
+								<span class="input-group-text">DELETE</span>
+								<button class="btn btn-danger" onclick="deleteById(deleteId.value)">Send</button>
+							</div>
+							<div class="input-group mb-2">
+								<span class="input-group-text w-25">Save</span>
+								<input type="text" id="pathPost" class="form-control">
+								<span class="input-group-text">POST</span>
+								<button class="btn btn-success" onclick="post(postBody.value)">Send</button>
+							</div>
+							<textarea id="postBody" class="form-control mb-2"></textarea>
+							<div class="input-group mb-2">
+								<span class="input-group-text w-25">Update</span>
+								<input type="text" id="pathPut" class="form-control">
+								<input type="text" id="putId" class="form-control" placeholder="ID">
+								<span class="input-group-text">PUT</span>
+								<button class="btn btn-warning" onclick="put(putId.value, putBody.value)">Send</button>
+							</div>
+							<textarea id="putBody" class="form-control mb-2"></textarea>
+						</div>
+					</div>
+					
+					<div class="card text-white section mb-4">
+						<div class="card-header bg-secondary">Guia</div>
+						<div class="card-body">
+							<!-- find by destino id -->
+							<div class="input-group mb-2">
+								<span class="input-group-text w-25">find Guia</span>
+								<input type="text" id="pathGuiaDestinoId" class="form-control">
+								<input id="guiaDestinoId" type="text" class="form-control" placeholder="ID">
+								<span class="input-group-text">GET</span>
+								<button class="btn btn-primary" onclick="getGuiasDestino()">Send</button>
+							</div>
+							<!-- destino NULL -->
+							<div class="input-group mb-2">
+								<span class="input-group-text w-25">destino NULL</span>
+								<input type="text" id="pathGuiaDestinoNull" class="form-control">
+								<span class="input-group-text">GET</span>
+								<button class="btn btn-primary" onclick="getGuiasDestinoNull()">Send</button>
+							</div>
+							<!-- add destino -->
+							<div class="input-group mb-2">
+								<span class="input-group-text w-25">add destino</span>
+								<input type="text" id="pathGuiaAddDestino" class="form-control">
+								<input id="guiaIdAdd" type="text" class="form-control" placeholder="ID">
+								<span class="input-group-text">/destino/</span>
+								<input id="destinoIdAddGuia" type="text" class="form-control" placeholder="ID Destino">
+								<span class="input-group-text">PUT</span>
+								<button class="btn btn-warning" onclick="addDestino()">Send</button>
+							</div>
+							<!-- remove destino -->
+							<div class="input-group">
+								<span class="input-group-text w-25">remove destino</span>
+								<input type="text" id="pathGuiaRemoveDestino" class="form-control">
+								<input id="guiaIdRemove" type="text" class="form-control" placeholder="ID">
+								<span class="input-group-text">/destino</span>
+								<span class="input-group-text">DELETE</span>
+								<button class="btn btn-danger" onclick="removeDestino()">Send</button>
+							</div>
+						</div>
+					</div>
+					
+					
+					<!-- USUARIOS -->
+					<div class="card text-white section mb-4">
+						<div class="card-header bg-secondary">Usuario</div>
+						<div class="card-body">
+							<div class="input-group">
+								<span class="input-group-text w-25">find Usuario</span>
+								<input type="text" id="pathUsuarioDestinoId" class="form-control">
+								<input id="usuarioDestinoId" type="text" class="form-control" placeholder="ID">
+								<span class="input-group-text">GET</span>
+								<button class="btn btn-primary" onclick="getUsuariosDestino()">Send</button>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- fin derecha -->
+			</div>
+		</div>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jsoneditor/10.4.1/jsoneditor.js"></script>
+		<script src="app.js"></script>
+	</body>
+</html>
