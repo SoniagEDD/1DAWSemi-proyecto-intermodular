@@ -1,0 +1,15 @@
+{
+  "groups": [
+    {
+      "name": "datasource",
+      "type": "javax.sql.DataSource",
+      "sourceType": "pmo.daw.semi.config.datasource.appConfig",
+      "sourceMethod": "javax.sql.DataSource javaDataSource() "
+    }
+  ],
+  "properties": [],
+  "hints": [],
+  "ignored": {
+    "properties": []
+  }
+}
