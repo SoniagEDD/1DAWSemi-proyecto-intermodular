@@ -1,0 +1,13 @@
+eclipse.preferences.version=1
+encoding//src/main/java=UTF-8
+encoding//src/main/java/pmo/daw/semi/BackEndApplication.java=UTF-8
+encoding//src/main/java/pmo/daw/semi/controller/DestinoController.java=UTF-8
+encoding//src/main/java/pmo/daw/semi/model/entities/Destino.java=UTF-8
+encoding//src/main/java/pmo/daw/semi/model/repository/DestinoRepository.java=UTF-8
+encoding//src/main/java/pmo/daw/semi/model/service/DestinoService.java=UTF-8
+encoding//src/main/resources=UTF-8
+encoding//src/main/resources/data-jdbc.sql=UTF-8
+encoding//src/main/resources/schema-jdbc.sql=UTF-8
+encoding//src/test/java=UTF-8
+encoding//src/test/resources=UTF-8
+encoding/<project>=UTF-8

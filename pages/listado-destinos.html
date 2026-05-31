@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Listado de Destinos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="../css/listado-destinos.css" />
+  </head>
+
+  <body>
+    <header>
+      <div class="logo">
+        <span class="logo__icon">?</span>
+        <span class="logo__text">SemiDAW Travel Agency</span>
+      </div>
+
+      <nav aria-label="Navegación principal">
+        <ul class="nav__list">
+          <li><a href="../index.html" class="nav__link">Inicio</a></li>
+          <li>
+            <a href="../pages/usuario-listado.html" class="nav__link"
+              >Usuarios</a
+            >
+          </li>
+          <li>
+            <a
+              href="../pages/listado-destinos.html"
+              class="nav__link nav__link--active"
+              >Destinos</a
+            >
+          </li>
+          <li>
+            <a href="../pages/listado-guias.html" class="nav__link">Guias</a>
+          </li>
+          <li>
+            <a href="../pages/listado-reservas.html" class="nav__link"
+              >Reservas</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="list-section" aria-labelledby="list-title">
+        <h2 id="list-title" class="destinos">Destinos disponibles</h2>
+        <a id="btn-destino" class="destinos" href="../pages/crear-destino.html"
+          >Crear Destino</a
+        >
+
+        <div
+          class="filtros-container"
+          style="
+            margin: 20px 0;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+          "
+        >
+          <div>
+            <label
+              for="filtroPrecio"
+              style="margin-right: 5px; font-weight: bold"
+              >Precio Máximo (€):</label
+            >
+            <input
+              type="number"
+              id="filtroPrecio"
+              placeholder="Ej: 500"
+              style="padding: 5px; border-radius: 4px; border: 1px solid #ccc"
+            />
+          </div>
+          <div>
+            <label
+              for="filtroPasaporte"
+              style="margin-right: 5px; font-weight: bold"
+              >Requiere pasaporte:</label
+            >
+            <select
+              id="filtroPasaporte"
+              style="padding: 5px; border-radius: 4px; border: 1px solid #ccc"
+            >
+              <option value="todos">Todos</option>
+              <option value="si">Sí</option>
+              <option value="no">No</option>
+            </select>
+          </div>
+
+          <button
+            id="btnFiltrarDestinos"
+            class="btn btn-modificar"
+            type="button"
+            style="padding: 6px 12px; cursor: pointer"
+          >
+            Filtrar Destinos
+          </button>
+
+          <button
+            id="btnLimpiarFiltros"
+            class="btn btn-modificar"
+            type="button"
+            style="padding: 6px 12px; cursor: pointer"
+          >
+            Limpiar Filtros
+          </button>
+        </div>
+
+        <table class="tabla">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Ciudad</th>
+              <th>País</th>
+              <th>Precio (€)</th>
+              <th>Requiere pasaporte</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+
+          <tbody id="tablaDestinos"></tbody>
+        </table>
+
+        <p id="mensaje" class="mensaje"></p>
+      </section>
+    </main>
+
+    <footer>
+      <p>© 2026 Agencia de Viajes SemiDAW · Páginas de Prueba</p>
+    </footer>
+
+    <script src="../js/destinos.js"></script>
+  </body>
+</html>
