@@ -4,17 +4,29 @@
     <meta charset="UTF-8" />
     <title>Modificar Usuario</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<<<<<<< HEAD
+=======
+    <!-- archivo de estilos -->
+>>>>>>> origin/develop
     <link rel="stylesheet" href="../css/modificar-usuario.css" />
   </head>
 
   <body>
     <header>
       <div class="logo">
+<<<<<<< HEAD
         <span class="logo__icon">?</span>
         <span class="logo__text">SemiDAW Travel Agency</span>
       </div>
 
       <nav aria-label="Navegación principal">
+=======
+        <span class="logo__icon">âœˆ</span>
+        <span class="logo__text">SemiDAW Travel Agency</span>
+      </div>
+
+      <nav aria-label="NavegaciÃ³n principal">
+>>>>>>> origin/develop
         <ul class="nav__list">
           <li><a href="../index.html" class="nav__link">Inicio</a></li>
           <li>
@@ -57,9 +69,14 @@
               required
               minlength="2"
               maxlength="40"
+<<<<<<< HEAD
               pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"
             />
             <div class="Aviso"></div>
+=======
+              pattern="[A-Za-zÃÃ‰ÃÃ“ÃšÃ¡Ã©Ã­Ã³ÃºÃ±Ã‘ ]+"
+            />
+>>>>>>> origin/develop
 
             <label for="apellidos">Apellidos</label>
             <input
@@ -69,9 +86,14 @@
               required
               minlength="2"
               maxlength="60"
+<<<<<<< HEAD
               pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ ]+"
             />
             <div class="Aviso"></div>
+=======
+              pattern="[A-Za-zÃÃ‰ÃÃ“ÃšÃ¡Ã©Ã­Ã³ÃºÃ±Ã‘ ]+"
+            />
+>>>>>>> origin/develop
 
             <label for="email">Email</label>
             <input
@@ -81,9 +103,14 @@
               required
               maxlength="80"
             />
+<<<<<<< HEAD
             <div class="Aviso"></div>
 
             <label for="telefono">Teléfono</label>
+=======
+
+            <label for="telefono">TelÃ©fono</label>
+>>>>>>> origin/develop
             <input
               type="tel"
               id="telefono"
@@ -92,7 +119,10 @@
               pattern="[0-9]{9}"
               maxlength="9"
             />
+<<<<<<< HEAD
             <div class="Aviso"></div>
+=======
+>>>>>>> origin/develop
 
             <label for="fecha_nacimiento">Fecha de nacimiento</label>
             <input
@@ -101,6 +131,7 @@
               name="fecha_nacimiento"
               required
             />
+<<<<<<< HEAD
             <div class="Aviso"></div>
           </fieldset>
 
@@ -114,6 +145,17 @@
 
             <div id="pasaporteFields">
               <label for="numero" class="error">NÃºmero de pasaporte</label>
+=======
+          </fieldset>
+
+          <fieldset>
+            <legend>Pasaporte</legend>
+
+            <p id="estadoPasaporte" class="info"></p>
+
+            <div id="pasaporteFields" class="hidden">
+              <label for="numero">NÃºmero de pasaporte</label>
+>>>>>>> origin/develop
               <input
                 type="text"
                 id="numero"
@@ -121,11 +163,16 @@
                 minlength="6"
                 maxlength="20"
               />
+<<<<<<< HEAD
               <div class="Aviso"></div>
 
               <label for="pais_expedicion" class="error"
                 >PaÃ­s de expediciÃ³n</label
               >
+=======
+
+              <label for="pais_expedicion">PaÃ­s de expediciÃ³n</label>
+>>>>>>> origin/develop
               <input
                 type="text"
                 id="pais_expedicion"
@@ -133,6 +180,7 @@
                 minlength="3"
                 maxlength="40"
               />
+<<<<<<< HEAD
               <div class="Aviso"></div>
 
               <label for="fecha_caducidad" class="error"
@@ -146,6 +194,19 @@
           <button type="submit" class="btn" id="form" name="form">
             Crear usuario
           </button>
+=======
+
+              <label for="fecha_caducidad">Fecha de caducidad</label>
+              <input type="date" id="fecha_caducidad" name="fecha_caducidad" />
+            </div>
+
+            <button type="button" id="btnCrearPasaporte" class="btn hidden">
+              Crear pasaporte
+            </button>
+          </fieldset>
+
+          <button type="submit" class="btn">Guardar cambios</button>
+>>>>>>> origin/develop
         </form>
 
         <p id="mensaje" class="mensaje"></p>
@@ -153,7 +214,11 @@
     </main>
 
     <footer>
+<<<<<<< HEAD
       <p>© 2026 Agencia de Viajes SemiDAW · Páginas de Prueba</p>
+=======
+      <p>Â© 2026 Agencia de Viajes SemiDAW Â· PÃ¡ginas de Prueba</p>
+>>>>>>> origin/develop
     </footer>
 
     <script src="../js/usuarios.js"></script>
