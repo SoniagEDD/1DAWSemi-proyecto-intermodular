@@ -1,0 +1,146 @@
+/* Configuración de estilo crear-destino*/
+body {
+    font-family: system-ui, sans-serif;
+    background-image: url("../img/coliseo.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background: #005f99;
+    color: #fff;
+}
+
+/* Navegación */
+.nav__list {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+.nav__link {
+    color: #e0f4ff;
+    text-decoration: none;
+    font-size: 0.95rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 999px;
+    transition: background 0.2s, color 0.2s;
+}
+
+.nav__link:hover {
+    background: #e0f4ff;
+    color: #005f99;
+}
+
+.nav__link--active {
+    background: #e0f4ff;
+    color: #005f99;
+    font-weight: 600;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.form-section {
+    background: rgb(100, 255, 255);
+    padding: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    width: 100%;
+    max-width: 600px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+fieldset {
+    background: rgb(120, 255, 255);
+    border: 1px solid #2f0202;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+label {
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+/* animacion, parte 1 */
+#pasaporteFields {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 2s ease, opacity 0.3s ease;
+}
+
+/* animacion, parte 2 */
+#pasaporteFields.show {
+  max-height: 500px;
+  opacity: 1;
+}
+
+#pasaporteFields label {
+  display: block;
+  width: 100%;
+  margin-bottom: 8px;
+}
+
+#pasaporteFields input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input {
+    padding: 0.6rem;
+    border-radius: 0.4rem;
+    border: 1px solid #bbb;
+}
+
+.btn {
+    padding: 0.8rem;
+    background: #0077b6;
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #005f99;
+}
+
+.hidden {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+}
+
+.mensaje {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+/* Footer */
+footer {
+    padding: 1rem 1.5rem;
+    text-align: center;
+    background: #003049;
+    color: #e0f4ff;
+    font-size: 0.85rem;
+    margin-top: 2rem;
+}
